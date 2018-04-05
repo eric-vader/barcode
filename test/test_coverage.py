@@ -11,26 +11,26 @@ exitcode = 0
 coverage.erase()
 coverage.start()
 
-import hubarcode.qrcode.qrcodetest
+import barcode.qrcode.qrcodetest
 suite = unittest.TestLoader().loadTestsFromName('qrcode.qrcodetest.MatrixTest')
 results = unittest.TextTestRunner().run(suite)
 if not results.wasSuccessful():
     exitcode += 1
 
-import hubarcode.datamatrix.matrixtest
+import barcode.datamatrix.matrixtest
 suite = unittest.TestLoader().loadTestsFromName('datamatrix.matrixtest.MatrixTest')
 results = unittest.TextTestRunner().run(suite)
 if not results.wasSuccessful():
     exitcode += 1
 
-import hubarcode.ean13.eantest
+import barcode.ean13.eantest
 suite = unittest.TestLoader().loadTestsFromName('ean13.eantest.EAN13Test')
 results = unittest.TextTestRunner().run(suite)
 if not results.wasSuccessful():
     exitcode += 1
 
-import hubarcode.code128.code128test
-suite = unittest.TestLoader().loadTestsFromName('hubarcode.code128.code128test.Code128Test')
+import barcode.code128.code128test
+suite = unittest.TestLoader().loadTestsFromName('barcode.code128.code128test.Code128Test')
 results = unittest.TextTestRunner().run(suite)
 if not results.wasSuccessful():
     exitcode += 1

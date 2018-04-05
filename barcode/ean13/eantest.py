@@ -54,7 +54,7 @@ class EAN13Test(unittest.TestCase):
 
             import filecmp
             self.failUnless(filecmp.cmp('test.png',
-                            'hubarcode/ean13/test_img/%d.png' % (index + 1)))
+                            'barcode/ean13/test_img/%d.png' % (index + 1)))
 
 
 if __name__ == '__main__':

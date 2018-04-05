@@ -3,7 +3,7 @@
 Just run it in directory which contains 'qrcode' (QR Code python library)
 and 'qrcode_data' subdirs.
 """
-import hubarcode.qrcode.isodata as isodata
+import barcode.qrcode.isodata as isodata
 import cPickle
 import os
 

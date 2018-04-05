@@ -2,7 +2,7 @@
 """Example code for qrcode library"""
 __revision__ = "$Revision$"
 
-from hubarcode.qrcode import QRCodeEncoder
+from barcode.qrcode import QRCodeEncoder
 import sys
 import logging
 

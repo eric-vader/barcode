@@ -51,9 +51,9 @@ packages, data_files = [], []
 root_dir = os.path.dirname(__file__)
 if root_dir != '':
     os.chdir(root_dir)
-hubarcode_dir = 'hubarcode'
+barcode_dir = 'barcode'
 
-for dirpath, dirnames, filenames in os.walk(hubarcode_dir):
+for dirpath, dirnames, filenames in os.walk(barcode_dir):
     # Ignore dirnames that start with '.'
     for i, dirname in enumerate(dirnames):
         if dirname.startswith('.'): del dirnames[i]
@@ -71,9 +71,9 @@ if len(sys.argv) > 1 and sys.argv[1] == 'bdist_wininst':
 
 
 setup(
-    name='huBarcode',
-    version='1.0.1',
-    url='http://github.com/mdornseif/huBarcode',
+    name='Barcode',
+    version='0.0.1',
+    url='http://github.com/ericvader/barcode',
     maintainer='Maximillian Dornseif',
     maintainer_email='md@hudora.de',
     description='generation of barcodes in Python',
@@ -85,6 +85,6 @@ setup(
                  'Programming Language :: Python',
                  'Topic :: Multimedia :: Graphics',
                  'Topic :: Office/Business'],
-    package_data={'hubarcode': ['fonts/*.pil', 'fonts/*.pbm']},
+    package_data={'barcode': ['fonts/*.pil', 'fonts/*.pbm']},
     zip_safe=False,
 )

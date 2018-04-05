@@ -4,4 +4,4 @@ from code128test import Code128Test
 
 for index, string in enumerate(Code128Test.test_strings):
     enc = Code128Encoder(string)
-    enc.save("hubarcode/code128/test_img/%d.png" % (index + 1))
+    enc.save("barcode/code128/test_img/%d.png" % (index + 1))

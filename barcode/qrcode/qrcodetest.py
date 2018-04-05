@@ -42,7 +42,7 @@ class MatrixTest(unittest.TestCase):
 
             import filecmp
             self.failUnless(filecmp.cmp('test.png',
-                                        'hubarcode/qrcode/test_img/%d.png' % i))
+                                        'barcode/qrcode/test_img/%d.png' % i))
             i += 1
 
     def test_encoding(self):

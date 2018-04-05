@@ -42,7 +42,7 @@ class Code128Test(unittest.TestCase):
         self.assertEqual(Code128Encoder('HI34567A').encoded_text, [104, 40, 41, 99, 34, 56, 100, 23, 33])
 
         # there was a Bug in C encoding when we have a leftover digit at the end
-        # see https://github.com/hudora/huBarcode/issues/issue/11
+        # see https://github.com/hudora/barcode/issues/issue/11
         self.assertEqual(Code128Encoder('12345').encoded_text, [105, 12, 34, 100, 21])
 
     def test_check_sum(self):
@@ -77,7 +77,7 @@ class Code128Test(unittest.TestCase):
 
             import filecmp
             self.failUnless(filecmp.cmp('test.png',
-                            'hubarcode/code128/test_img/%d.png' % (index + 1)))
+                            'barcode/code128/test_img/%d.png' % (index + 1)))
 
 
 if __name__ == '__main__':

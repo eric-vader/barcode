@@ -3,7 +3,7 @@
 Just run it in directory which contains 'qrcode' (QR Code python library)
 and 'qrcode_data' subdirs.
 """
-import hubarcode.qrcode.isodata as isodata
+import barcode.qrcode.isodata as isodata
 import cPickle
 import os
 
@@ -51,9 +51,9 @@ for version in range(1, 41):
         qrv.write('rs_ecc_codewords = %d\n' % rs_ecc_codewords)
         qrv.write('rs_block_order = cPickle.loads("""%s""")\n' %
                                                cPickle.dumps(rs_block_order))
-        qrv.write('from hubarcode.qrcode.data.rsc%d import rs_cal_table\n' %
+        qrv.write('from barcode.qrcode.data.rsc%d import rs_cal_table\n' %
                                                             rs_ecc_codewords)
-        qrv.write('from hubarcode.qrcode.data.fr%d import frame_data\n' % version)
+        qrv.write('from barcode.qrcode.data.fr%d import frame_data\n' % version)
         qrv.close()
 
         filename = 'rsc%s.dat' % rs_ecc_codewords
