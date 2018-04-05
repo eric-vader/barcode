@@ -76,3 +76,7 @@ class DataMatrixEncoder:
         """Return an ascii representation of the matrix"""
         dmtx = DataMatrixRenderer(self.matrix)
         return dmtx.get_ascii()
+
+    def get_pilimage(self, cellsize=5):
+        dmtx = DataMatrixRenderer(self.matrix)
+        return dmtx.get_pilimage(cellsize=5)
