@@ -79,4 +79,4 @@ class DataMatrixEncoder:
 
     def get_pilimage(self, cellsize=5, border=2):
         dmtx = DataMatrixRenderer(self.matrix)
-        return dmtx.get_pilimage(cellsize=5, border)
+        return dmtx.get_pilimage(cellsize, border)
