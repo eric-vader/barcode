@@ -62,11 +62,11 @@ class DataMatrixRenderer:
                 for i in range(0, self.height - (width * 2))] + \
             [[colour] * self.width] * width
 
-    def get_pilimage(self, cellsize):
+    def get_pilimage(self, cellsize, width):
         """Return the matrix as an PIL object"""
 
         # add the quiet zone (2 x cell width)
-        self.add_border(colour=0, width=2)
+        self.add_border(colour=0, width=width)
 
         # get the matrix into the right buffer format
         buff = self.get_buffer(cellsize)
@@ -77,15 +77,15 @@ class DataMatrixRenderer:
                                buff, 'raw', 'L', 0, -1)
         return img
 
-    def write_file(self, cellsize, filename):
+    def write_file(self, cellsize, filename, width):
         """Write the matrix out to an image file"""
-        img = self.get_pilimage(cellsize)
+        img = self.get_pilimage(cellsize, width)
         img.save(filename)
 
-    def get_imagedata(self, cellsize):
+    def get_imagedata(self, cellsize, width):
         """Write the matrix out as PNG to an bytestream"""
         imagedata = StringIO()
-        img = self.get_pilimage(cellsize)
+        img = self.get_pilimage(cellsize, width)
         img.save(imagedata, "PNG")
         return imagedata.getvalue()
 

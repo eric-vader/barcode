@@ -60,23 +60,23 @@ class DataMatrixEncoder:
         placer = DataMatrixPlacer()
         placer.place(codewords, self.matrix)
 
-    def save(self, filename, cellsize=5):
+    def save(self, filename, cellsize=5, border=2):
         """Write the matrix out to an image file"""
         dmtx = DataMatrixRenderer(self.matrix)
-        dmtx.write_file(cellsize, filename)
+        dmtx.write_file(cellsize, filename, border)
 
-    def get_imagedata(self, cellsize=5):
+    def get_imagedata(self, cellsize=5, border=2):
         """Write the matrix out to an PNG bytestream"""
         dmtx = DataMatrixRenderer(self.matrix)
         self.width = dmtx.width
         self.height = dmtx.height
-        return dmtx.get_imagedata(cellsize)
+        return dmtx.get_imagedata(cellsize, border)
 
     def get_ascii(self):
         """Return an ascii representation of the matrix"""
         dmtx = DataMatrixRenderer(self.matrix)
         return dmtx.get_ascii()
 
-    def get_pilimage(self, cellsize=5):
+    def get_pilimage(self, cellsize=5, border=2):
         dmtx = DataMatrixRenderer(self.matrix)
-        return dmtx.get_pilimage(cellsize=5)
+        return dmtx.get_pilimage(cellsize=5, border)
